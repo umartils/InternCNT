@@ -29,59 +29,48 @@ export default function Login() {
       <Head>
         <title>Login</title>
       </Head>
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
-          <h2 className="text-2xl font-bold text-center mb-8 text-gray-700">Login to Your Account</h2>
-          {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-          <form onSubmit={handleLogin}>
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                Email
-              </label>
-              <div className="relative">
-                <input
-                  type="email"
-                  id="email"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pl-10"
-                  placeholder="useremail@user.id"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <svg className="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M10 2a4 4 0 100 8 4 4 0 000-8zM2 14a8 8 0 0116 0v1H2v-1z" clipRule="evenodd"></path>
-                  </svg>
-                </div>
+      
+      <div className="flex items-center justify-center min-h-screen bg-black">
+        <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+          <form className="space-y-6" action="#" onSubmit={handleLogin}>
+            <h5 className="text-xl font-medium text-gray-900 dark:text-white text-center">Welcome</h5>
+            <div>
+              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+              <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" 
+                placeholder="name@company.com" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                required 
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+              <input 
+                type="password" 
+                name="password" 
+                id="password" 
+                placeholder="••••••••" 
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                required 
+              />
+            </div>
+            <div className="flex items-start">
+              <div className="flex items-start">
+                
               </div>
             </div>
-            <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-                Password
-              </label>
-              <div className="relative">
-                <input
-                  type="password"
-                  id="password"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pl-10"
-                  placeholder="********"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <svg className="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M10 2a4 4 0 100 8 4 4 0 000-8zM2 14a8 8 0 0116 0v1H2v-1z" clipRule="evenodd"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between">
-              <button
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
-              >
-                Login
-              </button>
-            </div>
+            <button 
+              type="submit" 
+              className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Login to your account
+            </button>
           </form>
         </div>
       </div>
